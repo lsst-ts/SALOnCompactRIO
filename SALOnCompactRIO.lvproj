@@ -21,12 +21,14 @@
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
 		<Item Name="Typedefs" Type="Folder">
-			<Item Name="cRIO.ctl" Type="VI" URL="../Typedefs/cRIO.ctl"/>
 			<Item Name="Item For Copy Selection.ctl" Type="VI" URL="../Typedefs/Item For Copy Selection.ctl"/>
 			<Item Name="Linux Desktop.ctl" Type="VI" URL="../Typedefs/Linux Desktop.ctl"/>
+			<Item Name="cRIO.ctl" Type="VI" URL="../Typedefs/cRIO.ctl"/>
 		</Item>
-		<Item Name="deployScriptLinuxDesktop.vi" Type="VI" URL="../deployScriptLinuxDesktop.vi"/>
 		<Item Name="FileTransfer.lvclass" Type="LVClass" URL="../FileTransfer/FileTransfer.lvclass"/>
+		<Item Name="SystemSettings.lvclass" Type="LVClass" URL="../SystemSettings/SystemSettings.lvclass"/>
+		<Item Name="deployScriptLinuxDesktop.vi" Type="VI" URL="../deployScriptLinuxDesktop.vi"/>
+		<Item Name="setUpCRIOEnvironment.vi" Type="VI" URL="../setUpCRIOEnvironment.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="System Exec.vi" Type="VI" URL="/&lt;vilib&gt;/Platform/system.llb/System Exec.vi"/>
@@ -126,7 +128,7 @@ AddOutputFilter chunkFilter
 				<Item Name="Error Cluster From Error Code.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Error Cluster From Error Code.vi"/>
 				<Item Name="System Exec.vi" Type="VI" URL="/&lt;vilib&gt;/Platform/system.llb/System Exec.vi"/>
 			</Item>
-			<Item Name="SALLV_EXA.dll" Type="Document" URL="/home/lvuser/natinst/bin/data/SALLV_EXA.dll"/>
+			<Item Name="SALLV_EXA.dll" Type="Document" URL="../../../../lvuser/natinst/bin/data/SALLV_EXA.dll"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="My Real-Time Application" Type="{69A947D5-514E-4E75-818E-69657C0547D8}">
@@ -146,6 +148,7 @@ AddOutputFilter chunkFilter
 				<Property Name="Bld_targetDestDir" Type="Path">/home/lvuser/natinst/bin</Property>
 				<Property Name="Bld_version.build" Type="Int">3</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
+				<Property Name="DestinationCount" Type="Int">2</Property>
 				<Property Name="Destination[0].destName" Type="Str">startup.rtexe</Property>
 				<Property Name="Destination[0].path" Type="Path">/home/lvuser/natinst/bin/startup.rtexe</Property>
 				<Property Name="Destination[0].path.type" Type="Str">&lt;none&gt;</Property>
@@ -154,7 +157,7 @@ AddOutputFilter chunkFilter
 				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
 				<Property Name="Destination[1].path" Type="Path">/home/lvuser/natinst/bin/data</Property>
 				<Property Name="Destination[1].path.type" Type="Str">&lt;none&gt;</Property>
-				<Property Name="DestinationCount" Type="Int">2</Property>
+				<Property Name="SourceCount" Type="Int">4</Property>
 				<Property Name="Source[0].itemID" Type="Str">{9845CCD0-25CE-4209-9C78-92E4F85B4442}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
@@ -170,7 +173,6 @@ AddOutputFilter chunkFilter
 				<Property Name="Source[3].itemID" Type="Ref">/RT CompactRIO Target/SystemSettings.lvclass</Property>
 				<Property Name="Source[3].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[3].type" Type="Str">Library</Property>
-				<Property Name="SourceCount" Type="Int">4</Property>
 				<Property Name="TgtF_companyName" Type="Str">LSST</Property>
 				<Property Name="TgtF_enableDebugging" Type="Bool">true</Property>
 				<Property Name="TgtF_fileDescription" Type="Str">My Real-Time Application</Property>
